@@ -1,0 +1,13 @@
+{
+  "database": {
+    "user": "postgres",
+    "name": "forums",
+    "password": "postgres",
+    "host": "localhost",
+    "port": 5432
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 5000
+  }
+}
