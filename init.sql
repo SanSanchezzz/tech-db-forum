@@ -66,18 +66,23 @@ create unlogged table forum_user (
 );
 
 --
+create index on users using hash (email);
+create index on users using hash (nickname);
+
 create index on posts (id, thread);
-create index on posts (path, id);
-create index on posts (path, created, id);
-create index on posts (created, id);
+-- create index on posts (path, id);
+-- create index on posts (path, created, id);
+-- create index on posts (created, id);
 create index on posts (thread);
 create index on posts (path);
-create index on posts (id, cardinality(path), thread);
-create index on posts (cardinality(path), thread);
+create index on posts(forum);
+-- create index on posts(author);
 
 create index on forums USING hash (slug);
+create index on forums (nickname);
 
 create index on threads USING hash (id);
+create index on threads USING hash (slug);
 create index on threads (forum, created);
 --
 
